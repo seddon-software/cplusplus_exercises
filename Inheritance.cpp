@@ -5,6 +5,7 @@
 using namespace std;
 
 class InsufficientFundsException : exception {};
+
 class Money
 {
 public:
@@ -36,7 +37,6 @@ public:
 		pounds = p / 100;
 		pence = p % 100;
 	}
-
 	friend bool operator<(const Money& lhs, const Money& rhs)
 	{
 		if(lhs.pounds < rhs.pounds) return true;
