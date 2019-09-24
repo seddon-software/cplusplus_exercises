@@ -51,7 +51,6 @@ private:
 };
 
 int BankAccount::number = 1000;
-
 class CreditAccount : public BankAccount
 {
 public:
