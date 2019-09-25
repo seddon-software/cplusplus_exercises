@@ -1,16 +1,16 @@
-#include "Ladder.h"
+#include "League.h"
 
 #include <iostream>
 #include <sstream>
 
 class Team;
 
-void Ladder::add(const Team& team)
+void League::add(const Team& team)
 {
 	pTeams.push_back(&team);
 }
 
-void Ladder::print() const
+void League::print() const
 {
 	for(const auto* pTeam : pTeams)
 	{

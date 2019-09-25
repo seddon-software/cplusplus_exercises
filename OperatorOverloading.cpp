@@ -112,7 +112,6 @@ private:
 
 int main()
 {
-	vector<vector<int>> z = {{2,3,4},{5,6,7}, {9,8,7}, {10,2,4}};
 	Matrix product;
 	Matrix a = { {{1,2,3},{4,5,6}} };
 	Matrix b = { {{10,20},{30,40},{50,60}} };

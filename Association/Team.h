@@ -5,10 +5,10 @@
 #include <string>
 #include <vector>
 
-#include "Ladder.h"
+#include "League.h"
 using namespace std;
 
-class Ladder;
+class League;
 
 class Team
 {
@@ -18,7 +18,7 @@ public:
 	string status() const;
 	static void printTable();
 private:
-	static Ladder ladder;
+	static League league;
 	string name;
 	int won;
 	int lost;

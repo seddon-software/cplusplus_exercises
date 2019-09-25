@@ -1,5 +1,5 @@
-#ifndef LADDER_H
-#define LADDER_H
+#ifndef LEAGUE_H
+#define LEAGUE_H
 
 #include <iostream>
 #include <string>
@@ -10,10 +10,10 @@ using namespace std;
 
 class Team;
 
-class Ladder
+class League
 {
 public:
-	Ladder() {}
+	League() {}
 	void add(const Team& team);
 	void print() const;
 private:

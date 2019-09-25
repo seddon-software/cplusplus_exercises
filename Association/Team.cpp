@@ -12,7 +12,7 @@ out the current standings of the table.
 #include <iostream>
 #include <sstream>
 
-Ladder Team::ladder;
+League Team::league;
 
 
 void operator>>(Team& lhs, Team& rhs)
@@ -23,7 +23,7 @@ void operator>>(Team& lhs, Team& rhs)
 
 Team::Team(const string& name): name(name), won(0), lost(0)
 {
-	ladder.add(*this);
+	league.add(*this);
 }
 
 string Team::status() const
@@ -35,6 +35,6 @@ string Team::status() const
 
 void Team::printTable()
 {
-	ladder.print();
+	league.print();
 }
 
