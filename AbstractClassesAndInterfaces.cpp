@@ -14,13 +14,16 @@ typedef tuple<string,string,string,string,string> tuple5;
 class bad_swap : public exception
 {
 public:
-	bad_swap(const string& player) : player(player) {}
+	bad_swap(const string& player)
+	{
+		message = player + string(" is not in the team");
+	}
 	virtual const char* what() const noexcept
 	{
-		return (player + string(" is not in the team")).c_str();
+		return message.c_str();
 	}
 private:
-	string player;
+	string message;
 };
 
 template <typename T>
