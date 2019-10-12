@@ -11,6 +11,7 @@
 #include <string>
 #include <list>
 #include <sstream>
+#include <cstdlib>
 
 using namespace std;
 
@@ -21,6 +22,7 @@ list<string> extractLinesFromFile(const string& fileName)
 	ifstream in(fileName, ios::in);
 	if (!in.is_open()) {
 	    cerr << "failed to open " << fileName << endl;
+	    exit(1);
 	}
 
 	for(string line; getline(in, line); )
