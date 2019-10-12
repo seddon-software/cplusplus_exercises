@@ -14,15 +14,6 @@
 using namespace std;
 #define WORD_LENGTH 120
 
-/*
-string trim(const string& line)
-{
-    const char* whiteSpace = " \t\v\r\n";
-    size_t start = line.find_first_not_of(whiteSpace);
-    size_t end = line.find_last_not_of(whiteSpace);
-    return start == end ? std::string() : line.substr(start, end - start + 1);
-}
-*/
 
 map<string, int> determineStems(vector<string>& words)
 {
@@ -31,7 +22,7 @@ map<string, int> determineStems(vector<string>& words)
 
 	for(string word : words)
 	{
-		for(int i = 1; i <= word.size(); i++)
+		for(unsigned i = 1; i <= word.size(); i++)
 		{
 			string stem = word.substr(0, i);
 			stemCounts[stem]++;
@@ -67,7 +58,7 @@ array<tuple<string,int>,WORD_LENGTH> processStems(map<string, int> stemCounts)
     return popularStems;
 }
 
-vector<string> openTestData(const string& fileName)
+vector<string> extractLinesFromFile(const string& fileName)
 {
     // build list containing the test data
 	vector<string> v;
@@ -87,7 +78,7 @@ vector<string> openTestData(const string& fileName)
 
 int main()
 {
-	auto words = openTestData("/usr/share/dict/words");
+	auto words = extractLinesFromFile("/usr/share/dict/words");
 	auto stemCounts = determineStems(words);
 	auto popularStems = processStems(stemCounts);
 
